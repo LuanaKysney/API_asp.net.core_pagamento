@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 
 namespace Api_Pagamento.Zoop
 {
-    public class Gerenciador_zoop
-    {
-        //private IConfiguration _configuration;
-        //public  GerenciarZoopConecxao(IConfiguration configuration)
-        //{
-        //    //Armazenando minha instancia
-        //    _configuration = configuration;
+    //public class Gerenciador_zoop
+    //{
+    //    private IConfiguration _configuration;
+    //    private Models.Customer__client _customer__Client;
+    //    public GerenciarZoopConecxao(IConfiguration configuration, Models.Customer__client customer__Client)
+    //    {
+    //        //Armazenando minha instancia
+    //        _configuration = configuration;
+
+    //        const email_seller = "celsosz@novaweb.mobi";
+
+    //        const
 
 
-         
-        //} 
-    }
+    //    }
+    //}
 
 }
 
