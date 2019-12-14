@@ -21,13 +21,14 @@ namespace Api_Pagamento.Models
         [ForeignKey ("customerId")]
         public CustomerClient customer { get; set; }
 
-        public CustomerClient customerId { get; set; }
+        public Guid customerId { get; set; }
 
 
         //Caso não seja enviada uma data, o padrão é D+3.
         public DateTime expiration_date { get; set; }
 
         //Enviar valor em centavos
+        [Required]
         public decimal amount { get; set; }
 
         //Informações de instruções de pagamento para o caixa
@@ -43,34 +44,34 @@ namespace Api_Pagamento.Models
         public string payment_type { get; set; }
 
 
-        private IConfiguration _configuration;
-        public void GerenciarZoopConecxao(IConfiguration configuration)
-        {
-            //Armazenando minha instancia
-            _configuration = configuration;
+        //private IConfiguration _configuration;
+        //public void GerenciarZoopConecxao(IConfiguration configuration)
+        //{
+        //    //Armazenando minha instancia
+        //    _configuration = configuration;
 
-        }
-        public object GerarBoleto( /*decimal valor*/)
-        {
+        //}
+        //public object GerarBoleto( /*decimal valor*/)
+        //{
 
-            ZoopService.DefaultMarketplaceId = _configuration.GetValue<String>("Pagamento:Zoop:Marketplace_id");
-            ZoopService.DefaultApiKey = _configuration.GetValue<String>("Pagamento:Zoop:publishable_key");
+        //    ZoopService.DefaultMarketplaceId = _configuration.GetValue<String>("Pagamento:Zoop:Marketplace_id");
+        //    ZoopService.DefaultApiKey = _configuration.GetValue<String>("Pagamento:Zoop:publishable_key");
          
 
-            //Transaction transaction = new Transaction();
+        //    //Transaction transaction = new Transaction();
 
-            //transaction.Amount = 300;
-
-
-            //currency = "BRL";
-            //description = "Venda";
-            //on_behalf_of = "573e2aa71cb94ecda8dee14087327b48";
-            //customer = "573e2aa71cb94ecda8dee14087327b48";
-            //payment_type = "boleto";
+        //    //transaction.Amount = 300;
 
 
-            //return new { transaction = transaction.Id };
-            return customer;
-        }
+        //    //currency = "BRL";
+        //    //description = "Venda";
+        //    //on_behalf_of = "573e2aa71cb94ecda8dee14087327b48";
+        //    //customer = "573e2aa71cb94ecda8dee14087327b48";
+        //    //payment_type = "boleto";
+
+
+        //    //return new { transaction = transaction.Id };
+        //    return customer;
+        //}
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,7 +24,7 @@ namespace Api_Pagamento
                     // for demo purposes, delete the database & migrate on startup so 
                     // we can start with a clean slate
                     context.Database.EnsureDeleted();
-                    //context.Database.Migrate();
+                    context.Database.Migrate();
                 }
                 catch (Exception ex) {
                     var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
