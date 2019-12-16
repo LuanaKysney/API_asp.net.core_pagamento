@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api_Pagamento.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/pagamento")]
     [ApiController]
 
     public class PagamentoController : ControllerBase
@@ -90,5 +90,14 @@ namespace Api_Pagamento.Controllers
             return deserializedCustomer;
 
         }
+        //[HttpPost]
+        //public async Task<ActionResult<Models.Json_boleto>> TransacaoBoleto()
+        //{
+        //    var boleto = "";
+        //    //Criar uma nova transação de boleto através do serviço de pagamentos associando 
+        //    //    o comprador e o vendedor da sua plataforma, encaminhando o boleto gerado para
+        //    //    o comprador realizar o pagamento dentro do prazo determinado.
+        //    return ;
+        //}
     }
 }
