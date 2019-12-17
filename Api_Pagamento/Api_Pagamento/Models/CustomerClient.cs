@@ -30,11 +30,5 @@ namespace Api_Pagamento.Models
 
 
 
-
-        //public class transacao
-        //{
-        //    string uri = "https://api.zoop.ws/v1/marketplaces/:marketplace_id/buyers";
-        //}
-
     }
 }

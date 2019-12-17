@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Xml;
+using Api_Pagamento.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,14 +15,6 @@ namespace Api_Pagamento.Controllers
 
     public class PagamentoController : ControllerBase
     {
-        //[HttpGet]
-        //[Route("")]
-        //public async Task<ActionResult<List<Models.CustomerClient>>> Get ([FromServices] Data.DataContext context)
-        //{
-        //    var comprador = await context.customerClients.to
-
-        //    return comprador;
-        //}
 
         [HttpPost]
         [Route ("")]
@@ -41,10 +34,9 @@ namespace Api_Pagamento.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Models.CustomerClient>> CriarComprador()
+        [Route("")]
+        public async Task<ActionResult<Models.CustomerClient>> PostCriarComprador()
         {
-            var a = true;
-            
             string uri = @"https://api.zoop.ws/v1/marketplaces/19c7b44ebce4413f8b1ed846aa43d768/buyers";
 
             //Paramentros 
@@ -87,17 +79,53 @@ namespace Api_Pagamento.Controllers
          
             
             
-            return deserializedCustomer;
+            return Ok();
 
         }
-        //[HttpPost]
-        //public async Task<ActionResult<Models.Json_boleto>> TransacaoBoleto()
-        //{
-        //    var boleto = "";
-        //    //Criar uma nova transação de boleto através do serviço de pagamentos associando 
-        //    //    o comprador e o vendedor da sua plataforma, encaminhando o boleto gerado para
-        //    //    o comprador realizar o pagamento dentro do prazo determinado.
-        //    return ;
-        //}
+        [HttpGet]
+        [Route ("")]
+        public ActionResult GetVendedor()
+        {
+            SellerVendedor sellerVendedor = new SellerVendedor();
+
+            string uri = "https://api.zoop.ws/v1/marketplaces/19c7b44ebce4413f8b1ed846aa43d768/sellers";
+
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Models.Json_boleto>> PostTransacaoBoleto([FromBody] Models.Json_boleto json_Boleto )
+        {
+            CustomerClient customerClient = new CustomerClient();
+            string url = @"https://api.zoop.ws/v1/marketplaces/19c7b44ebce4413f8b1ed846aa43d768/transactions";
+            
+            System.Collections.Specialized.NameValueCollection postDados = new System.Collections.Specialized.NameValueCollection();
+            postDados.Add("first_name", "Goku Super Sayajin");
+            postDados.Add("taxpayer_id", "27773053073");
+            postDados.Add("email", "testeApi@teste.com");
+            postDados.Add("currency", "BRL");
+            postDados.Add("address", "");
+            postDados.Add("neighborhood", "Barra da Tijuca");
+            postDados.Add("city", "Rio de Janeiro");
+            postDados.Add("state", "RJ");
+            postDados.Add("postal_code", "22845046");
+            postDados.Add("country_code", "BR");
+            json_Boleto.amount = 30;
+            json_Boleto.currency = "brl";
+            json_Boleto.on_behalf_of = "Celso";
+            json_Boleto.payment_type = "boleto";
+            json_Boleto.customer = customerClient;
+            
+           using (WebClient webClient = new WebClient())
+            {
+                webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
+                webClient.Headers[HttpRequestHeader.Authorization] = "zpk_test_fjeuGSGMEgTbIqyv74nsUkpd";
+                
+            }
+
+
+            return Ok("Processado");
+        }
     }
 }
