@@ -8,14 +8,34 @@ namespace Api_Pagamento.Services
 {
     public class CustomerClientRepository : ICustomerClient, IDisposable
     {
+
+        private readonly Data.DataContext _context;
+
+        public CustomerClientRepository (Data.DataContext context)
+        {
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+        }
+
         public void AddCustomer(CustomerClient customer)
         {
             throw new NotImplementedException();
         }
-
-        public void AddJson_boleto(Guid customerId, Json_boleto id)
+        //Criando um boleto
+        public void AddJson_boleto(Guid customerId, Json_boleto boleto)
         {
-            throw new NotImplementedException();
+
+            if (customerId == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(customerId));
+            }
+
+            if (boleto == null)
+            {
+                throw new ArgumentNullException(nameof(Json_boleto));
+            }
+            // always set the AuthorId to the passed-in authorId
+            boleto.customerId = customerId;
+            _context.json_Boletos.Add(boleto);
         }
 
         public bool CustomerExists(Guid customerId)

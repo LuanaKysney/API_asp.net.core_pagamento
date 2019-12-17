@@ -257,3 +257,5 @@ D:\GIT-Projects\API_asp.net.core_pagamento\Api_Pagamento\Api_Pagamento\obj\Debug
 D:\GIT-Projects\API_asp.net.core_pagamento\Api_Pagamento\Api_Pagamento\obj\Debug\netcoreapp3.0\Api_Pagamento.csproj.CopyComplete
 D:\GIT-Projects\API_asp.net.core_pagamento\Api_Pagamento\Api_Pagamento\obj\Debug\netcoreapp3.0\Api_Pagamento.dll
 D:\GIT-Projects\API_asp.net.core_pagamento\Api_Pagamento\Api_Pagamento\obj\Debug\netcoreapp3.0\Api_Pagamento.pdb
+D:\GIT-Projects\API_asp.net.core_pagamento\Api_Pagamento\Api_Pagamento\obj\Debug\netcoreapp3.0\Api_Pagamento.MvcApplicationPartsAssemblyInfo.cache
+D:\GIT-Projects\API_asp.net.core_pagamento\Api_Pagamento\Api_Pagamento\bin\Debug\netcoreapp3.0\AutoMapper.dll

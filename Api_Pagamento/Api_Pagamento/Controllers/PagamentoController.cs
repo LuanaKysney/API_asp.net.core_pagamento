@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Xml;
 using Api_Pagamento.Models;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,9 @@ namespace Api_Pagamento.Controllers
 
     public class PagamentoController : ControllerBase
     {
+        private readonly Services.ICustomerClient _customerClient;
+        private readonly IMapper _mapper;
+
 
         [HttpPost]
         [Route ("")]
@@ -126,6 +130,25 @@ namespace Api_Pagamento.Controllers
 
 
             return Ok("Processado");
+        }
+
+        [HttpPost]
+        public ActionResult<Models.Json_boleto> CreateBoletoForCustomer(
+            Guid customerId, JsonForCreationDto boleto)
+        {
+            if (!_customerClient.CustomerExists(customerId))
+            {
+                return NotFound();
+            }
+
+            var courseEntity = _mapper.Map<Models.Json_boleto>(boleto);
+            _customerClient.AddJson_boleto(customerId, courseEntity);
+            _customerClient.Save();
+
+            var courseToReturn = _mapper.Map<Data.DataContext>(courseEntity);
+            return CreatedAtRoute("GetBoletoForCustomer",
+                new { authorId = customerId, courseId = courseToReturn.ContextId },
+                courseToReturn);
         }
     }
 }
