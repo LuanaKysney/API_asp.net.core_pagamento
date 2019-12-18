@@ -97,6 +97,8 @@ namespace Api_Pagamento.Controllers
         //    //Criar uma nova transação de boleto através do serviço de pagamentos associando 
         //    //    o comprador e o vendedor da sua plataforma, encaminhando o boleto gerado para
         //    //    o comprador realizar o pagamento dentro do prazo determinado.
+        //string boletoUrl = transaction.BoletoUrl;
+       // string boletoBarcode = transaction.BoletoBarcode;
         //    return ;
         //}
     }
