@@ -18,8 +18,8 @@ namespace Api_Pagamento.Services
         CustomerClient GetCustomerClient(Guid customerId);
         IEnumerable<CustomerClient> GetCustomerClients(IEnumerable<Guid> customerId);
         void AddCustomer(CustomerClient customer);
-        void DeleteCustomer(CustomerClient customer);
-        void UpdateCustomer(CustomerClient customer);
+        void DeleteCustomer(CustomerClient customerid);
+        void UpdateCustomer(CustomerClient customerid);
         bool CustomerExists(Guid customerId);
         bool Save();
     }

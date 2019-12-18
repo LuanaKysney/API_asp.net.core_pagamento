@@ -17,8 +17,14 @@ namespace Api_Pagamento.Controllers
     public class PagamentoController : ControllerBase
     {
         private readonly Services.ICustomerClient _customerClient;
+        private readonly Data.DataContext _dataContext;
         private readonly IMapper _mapper;
 
+        public PagamentoController(Data.DataContext dataContext)
+        {
+            //Injeção de dependencia do banco
+            _dataContext = dataContext;
+        }
 
         [HttpPost]
         [Route ("")]
