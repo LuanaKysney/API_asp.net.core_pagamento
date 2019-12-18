@@ -43,35 +43,5 @@ namespace Api_Pagamento.Models
         [Required]
         public string payment_type { get; set; }
 
-
-        //private IConfiguration _configuration;
-        //public void GerenciarZoopConecxao(IConfiguration configuration)
-        //{
-        //    //Armazenando minha instancia
-        //    _configuration = configuration;
-
-        //}
-        //public object GerarBoleto( /*decimal valor*/)
-        //{
-
-        //    ZoopService.DefaultMarketplaceId = _configuration.GetValue<String>("Pagamento:Zoop:Marketplace_id");
-        //    ZoopService.DefaultApiKey = _configuration.GetValue<String>("Pagamento:Zoop:publishable_key");
-         
-
-        //    //Transaction transaction = new Transaction();
-
-        //    //transaction.Amount = 300;
-
-
-        //    //currency = "BRL";
-        //    //description = "Venda";
-        //    //on_behalf_of = "573e2aa71cb94ecda8dee14087327b48";
-        //    //customer = "573e2aa71cb94ecda8dee14087327b48";
-        //    //payment_type = "boleto";
-
-
-        //    //return new { transaction = transaction.Id };
-        //    return customer;
-        //}
     }
 }

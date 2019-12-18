@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luana\\Documents\\Git-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj": {}
+    "D:\\GIT-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luana\\Documents\\Git-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj": {
+    "D:\\GIT-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luana\\Documents\\Git-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj",
+        "projectUniqueName": "D:\\GIT-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj",
         "projectName": "Api_Pagamento",
-        "projectPath": "C:\\Users\\Luana\\Documents\\Git-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj",
-        "packagesPath": "C:\\Users\\Luana\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luana\\Documents\\Git-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\obj\\",
+        "projectPath": "D:\\GIT-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\Api_Pagamento.csproj",
+        "packagesPath": "C:\\Users\\luanak\\.nuget\\packages\\",
+        "outputPath": "D:\\GIT-Projects\\API_asp.net.core_pagamento\\Api_Pagamento\\Api_Pagamento\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\luanak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.uxdivers.com/grial": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,6 +43,10 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.0, )"
@@ -63,6 +68,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             },
             "Zoop.Net": {
               "target": "Package",
