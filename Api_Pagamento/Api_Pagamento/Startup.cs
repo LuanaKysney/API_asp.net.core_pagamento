@@ -27,8 +27,8 @@ namespace Api_Pagamento
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
-            services.AddDbContext<Data.DataContext>(options => options.UseSqlServer("DatabasePagamento"));
+                                                                                   //Nome do meu DataContext mapeado meu banco
+            services.AddDbContext<Data.DataContext>(options => options.UseSqlServer("Data Source=Database\\DataContext.db"));
             //Deixar disponível a injeção de dependência
             services.AddScoped<Data.DataContext, Data.DataContext>();
 

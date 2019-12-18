@@ -17,8 +17,14 @@ namespace Api_Pagamento.Controllers
     public class PagamentoController : ControllerBase
     {
         private readonly Services.ICustomerClient _customerClient;
+        private readonly Data.DataContext _dataContext;
         private readonly IMapper _mapper;
 
+        public PagamentoController(Data.DataContext dataContext)
+        {
+            //Injeção de dependencia do banco
+            _dataContext = dataContext;
+        }
 
         [HttpPost]
         [Route ("")]
@@ -150,19 +156,5 @@ namespace Api_Pagamento.Controllers
                 new { authorId = customerId, courseId = courseToReturn.ContextId },
                 courseToReturn);
         }
-<<<<<<< HEAD
-        //[HttpPost]
-        //public async Task<ActionResult<Models.Json_boleto>> TransacaoBoleto()
-        //{
-        //    var boleto = "";
-        //    //Criar uma nova transação de boleto através do serviço de pagamentos associando 
-        //    //    o comprador e o vendedor da sua plataforma, encaminhando o boleto gerado para
-        //    //    o comprador realizar o pagamento dentro do prazo determinado.
-        //string boletoUrl = transaction.BoletoUrl;
-       // string boletoBarcode = transaction.BoletoBarcode;
-        //    return ;
-        //}
-=======
->>>>>>> 57df1eac00ed38f0b3e804686c33f43dbc48faa5
     }
 }
